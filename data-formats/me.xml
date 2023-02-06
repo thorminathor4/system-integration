@@ -1,0 +1,9 @@
+<xml>
+<me>
+    <name>Thor</name>
+    <age>24</age>
+    <hobbies>
+        <hobby>Programming</hobby>
+        <hobby>Music</hobby>
+    </hobbies>
+</me>
