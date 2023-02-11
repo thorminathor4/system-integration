@@ -2,11 +2,12 @@ import java.util.Scanner;
 import java.util.Map;
 import java.util.HashMap;
 import java.io.File;
-//import org.json.JSONObject;  
-//import org.json.JSONArray;
-//import org.json.JSONException;
+import org.json.JSONObject;  
+import org.json.JSONArray;
+import org.json.JSONException;
 
 class JsonParser{
+
     public static void main(String[] args){
         try{
             Scanner scanner = new Scanner(new File(args[0]));
@@ -16,13 +17,13 @@ class JsonParser{
             while(scanner.hasNextLine())
                 inputString += "\n" + scanner.nextLine();
             System.out.print(inputString);
-            //JSONObject jsonObject = new JSONObject(inputString);
-            //System.out.print(jsonObject);
+            JSONObject jsonObject = new JSONObject(inputString);
+            System.out.print(jsonObject);
         }catch(Exception exception){
             System.out.print(exception);
         }
     }
-    /*
+    
     public static Map<String, Object> jsonToMap(JSONObject json) throws JSONException {
         Map<String, Object> retMap = new HashMap<String, Object>();
         
@@ -53,9 +54,13 @@ class JsonParser{
     }
 
     public static List<Object> toList(JSONArray array) throws JSONException {
+
         List<Object> list = new ArrayList<Object>();
+
         for(int i = 0; i < array.length(); i++) {
+
             Object value = array.get(i);
+
             if(value instanceof JSONArray) {
                 value = toList((JSONArray) value);
             }
@@ -63,8 +68,12 @@ class JsonParser{
             else if(value instanceof JSONObject) {
                 value = toMap((JSONObject) value);
             }
+
             list.add(value);
+
         }
+        
         return list;
-    }*/
+    }
+
 }
