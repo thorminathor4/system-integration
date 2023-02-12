@@ -5,6 +5,7 @@ const output = {};
 input.split("\n").map(x => {
     let {0: key, 1: val} = x.split("=");
     if(val.includes(",")) val = val.split(",");
+    val = Number(val) || val;
     output[key] = val;
 });
 
