@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <style>
+            h1 {
+                text-align: center;
+            }
+            
+            table, th, td {
+                border: 1px solid black;
+            }
+    
+            main {
+                min-height: calc(100vh - 40px);
+                margin: 0 4em 0 4em;
+            }
+    
+            table {
+                width: 100%;
+            }
+    
+            footer {
+                color: grey;
+                font-size: 0.8em;
+            }
+        </style>
+        <title>test_db - Docs</title>
+    </head>
+    <body>
+        <main>
+            <h1>test_db</h1>
+    
+            <div class="database-table">
+        <h2 class="database-table-name">posts</h2>
+        <table class="database-table-body">
+            <tr>
+                <th>field</th><th>type</th>                 
+            </tr>
+    
+        </tr>
+        </thead>
+        <tbody>
+    
+            
+                <tr>
+                    <td>id</td><td>int</td>
+                </tr>
+                
+                <tr>
+                    <td>title</td><td>varchar(45)</td>
+                </tr>
+                
+                <tr>
+                    <td>description</td><td>varchar(2000)</td>
+                </tr>
+                
+    
+        </tbody>
+        </table>
+    
+        <h2 class="database-table-name">tags</h2>
+        <table class="database-table-body">
+            <tr>
+                <th>field</th><th>type</th>                 
+            </tr>
+    
+        </tr>
+        </thead>
+        <tbody>
+    
+            
+                <tr>
+                    <td>postid</td><td>int</td>
+                </tr>
+                
+                <tr>
+                    <td>tag</td><td>varchar(45)</td>
+                </tr>
+                
+    
+        </tbody>
+        </table>
+    </div>
+            </main> 
+            <br><br>
+            <footer>Powered by MRO</footer>
+        </body>
+        </html>
