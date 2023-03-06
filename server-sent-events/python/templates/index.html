@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server-sent Events</title>
+</head>
+<body>
+    <h1>Server-sent Evnets</h1>
+    <p>Time:</p>
+    <div id="server-sent-data"></div>
+
+    <script>
+        const eventSource = new EventSource('http://localhost:8000/sse');
+        const serverSentDataDiv = document.getElementById("server-sent-data");
+
+        eventSource.addEventListener("new_message", (event) => {
+            serverSentDataDiv.innerText = event.data.split(" ")[1].split(".")[0];
+        });
+
+        eventSource.addEventListener("end", (event) => {
+            console.log("Handling end...");
+            eventSource.close();
+        });
+    </script>
+</body>
+</html>
